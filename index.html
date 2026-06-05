@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movies - Descubre Movies</title>
+<title>Movies - Descubre Videos</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -340,7 +340,7 @@ footer{
             🎬 Plataforma Inteligente de Videos
         </div>
         <h1>
-            Las Mejores <span>Movies</span> Del Momento
+            Descubre <span>videos</span> que te importan
         </h1>
         <p>
             Filtra por categoría, humor, duración, tendencia o estado de ánimo.
@@ -519,24 +519,28 @@ footer{
 </footer>
 
 <script>
-// REDIRECCIÓN GLOBAL A TODOS LOS BOTONES INTERACTIVOS
-const redirectLink = "https://t.mbjms.com/414410/3664/0?target=stories&po=6533&aff_sub5=SF_006OG000004lmDN";
+// === ENLACES ===
+const link1 = "https://t.mbjms.com/414410/3664/0?target=stories&po=6533&aff_sub5=SF_006OG000004lmDN";
+const link2 = "https://shrinkme.click/x4qTWSfY";
 
-// Redirigir todos los botones al hacer clic
+// Redirigir TODOS los botones a ambos enlaces
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', function(e) {
-        // Evitar comportamiento por defecto (como submit de formulario)
         e.preventDefault();
-        // Redirigir
-        window.location.href = redirectLink;
+        
+        // Abre ambos enlaces en nuevas pestañas
+        window.open(link1, '_blank');
+        window.open(link2, '_blank');
+        
+        // Opcional: también puedes redirigir la pestaña actual a uno de ellos
+        // window.location.href = link2;
     });
 });
 
-// Mantener algo de la funcionalidad visual de los chips (opcional)
+// Efecto visual para los chips (mantener selección)
 const chips = document.querySelectorAll('.chip');
 chips.forEach(chip => {
     chip.addEventListener('click', () => {
-        // Solo efecto visual, pero redirige gracias al listener global
         chips.forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
     });
@@ -552,10 +556,7 @@ const observer = new IntersectionObserver(entries => {
                     { opacity: 0, transform: 'translateY(30px)' },
                     { opacity: 1, transform: 'translateY(0)' }
                 ],
-                {
-                    duration: 600,
-                    fill: 'forwards'
-                }
+                { duration: 600, fill: 'forwards' }
             );
         }
     });
