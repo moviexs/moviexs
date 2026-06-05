@@ -4,11 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Movies - Descubre Videos</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <style>
-
 :root{
     --bg:#070707;
     --bg2:#111111;
@@ -16,47 +13,37 @@
     --border:#262626;
     --text:#ffffff;
     --muted:#9e9e9e;
-
     --blue:#4f8cff;
     --purple:#8b5cf6;
     --pink:#ff3ea5;
-
     --gradient:linear-gradient(
         135deg,
         var(--blue),
         var(--purple),
         var(--pink)
     );
-
     --shadow:0 10px 30px rgba(0,0,0,.4);
 }
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
-
 body{
     font-family:'Inter',sans-serif;
     background:var(--bg);
     color:var(--text);
     overflow-x:hidden;
 }
-
 /* Scrollbar */
-
 ::-webkit-scrollbar{
     width:8px;
 }
-
 ::-webkit-scrollbar-thumb{
     background:linear-gradient(var(--blue),var(--pink));
     border-radius:50px;
 }
-
 /* HERO */
-
 .hero{
     min-height:100vh;
     position:relative;
@@ -67,7 +54,6 @@ body{
     padding:40px;
     overflow:hidden;
 }
-
 .hero::before{
     content:"";
     position:absolute;
@@ -79,13 +65,11 @@ body{
     background-position:center;
     filter:brightness(.6);
 }
-
 .hero-content{
     position:relative;
     z-index:2;
     max-width:900px;
 }
-
 .badge{
     display:inline-flex;
     padding:10px 18px;
@@ -95,26 +79,22 @@ body{
     margin-bottom:25px;
     backdrop-filter:blur(10px);
 }
-
 .hero h1{
     font-size:clamp(3rem,7vw,6rem);
     font-weight:800;
     line-height:1;
     margin-bottom:20px;
 }
-
 .hero h1 span{
     background:var(--gradient);
     -webkit-background-clip:text;
     color:transparent;
 }
-
 .hero p{
     color:#c4c4c4;
     font-size:1.2rem;
     margin-bottom:35px;
 }
-
 .search-box{
     max-width:800px;
     margin:auto;
@@ -125,7 +105,6 @@ body{
     overflow:hidden;
     backdrop-filter:blur(15px);
 }
-
 .search-box input{
     flex:1;
     padding:20px;
@@ -135,7 +114,6 @@ body{
     font-size:1rem;
     outline:none;
 }
-
 .search-btn{
     border:none;
     padding:0 30px;
@@ -144,9 +122,7 @@ body{
     cursor:pointer;
     font-weight:600;
 }
-
 /* FILTERS */
-
 .filters{
     position:sticky;
     top:0;
@@ -156,14 +132,12 @@ body{
     padding:20px;
     border-bottom:1px solid var(--border);
 }
-
 .filter-row{
     display:flex;
     gap:12px;
     flex-wrap:wrap;
     justify-content:center;
 }
-
 .chip{
     padding:10px 16px;
     border-radius:999px;
@@ -173,51 +147,40 @@ body{
     cursor:pointer;
     transition:.3s;
 }
-
 .chip:hover{
     transform:translateY(-2px);
 }
-
 .chip.active{
     background:var(--gradient);
     border:none;
 }
-
 .results-count{
     text-align:center;
     color:var(--muted);
     margin-top:15px;
 }
-
 /* SECTION TITLE */
-
 .section{
     padding:70px 6%;
 }
-
 .section-title{
     display:flex;
     justify-content:space-between;
     align-items:center;
     margin-bottom:30px;
 }
-
 .section-title h2{
     font-size:2rem;
 }
-
 .section-title span{
     color:var(--blue);
 }
-
 /* GRID */
-
 .video-grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
 }
-
 .card{
     background:var(--card);
     border-radius:20px;
@@ -226,19 +189,16 @@ body{
     transition:.35s;
     position:relative;
 }
-
 .card:hover{
     transform:translateY(-8px);
     border-color:rgba(139,92,246,.5);
     box-shadow:0 0 25px rgba(139,92,246,.15);
 }
-
 .thumbnail{
     position:relative;
     height:220px;
     overflow:hidden;
 }
-
 .thumbnail img,
 .thumbnail video{
     width:100%;
@@ -246,11 +206,9 @@ body{
     object-fit:cover;
     transition:.5s;
 }
-
 .card:hover .thumbnail img{
     transform:scale(1.08);
 }
-
 .overlay{
     position:absolute;
     inset:0;
@@ -265,11 +223,9 @@ body{
     opacity:0;
     transition:.3s;
 }
-
 .card:hover .overlay{
     opacity:1;
 }
-
 .play-now{
     background:var(--gradient);
     border:none;
@@ -279,22 +235,18 @@ body{
     cursor:pointer;
     font-weight:600;
 }
-
 .card-content{
     padding:18px;
 }
-
 .title{
     font-size:1rem;
     font-weight:700;
     margin-bottom:8px;
 }
-
 .author{
     color:var(--muted);
     font-size:.9rem;
 }
-
 .stats{
     display:flex;
     gap:15px;
@@ -302,27 +254,23 @@ body{
     color:#b9b9b9;
     font-size:.85rem;
 }
-
 .tags{
     display:flex;
     gap:8px;
     flex-wrap:wrap;
     margin-top:14px;
 }
-
 .tag{
     background:#222;
     padding:6px 10px;
     border-radius:999px;
     font-size:.75rem;
 }
-
 .actions{
     margin-top:15px;
     display:flex;
     gap:10px;
 }
-
 .btn{
     flex:1;
     padding:12px;
@@ -332,15 +280,12 @@ body{
     color:white;
     font-weight:600;
 }
-
 .btn-primary{
     background:var(--gradient);
 }
-
 .btn-dark{
     background:#222;
 }
-
 .personalized{
     background:
     linear-gradient(
@@ -350,9 +295,7 @@ body{
     );
     border-top:1px solid var(--border);
 }
-
 /* FLOAT BUTTON */
-
 .floating-btn{
     position:fixed;
     bottom:30px;
@@ -368,56 +311,40 @@ body{
     box-shadow:var(--shadow);
     z-index:999;
 }
-
 /* FOOTER */
-
 footer{
     padding:40px;
     text-align:center;
     color:#9d9d9d;
     border-top:1px solid var(--border);
 }
-
 /* MOBILE */
-
 @media(max-width:768px){
-
 .hero h1{
     font-size:3rem;
 }
-
 .search-box{
     flex-direction:column;
 }
-
 .search-btn{
     padding:18px;
 }
-
 }
-
 </style>
 </head>
 <body>
-
 <!-- HERO -->
-
 <section class="hero">
-
     <div class="hero-content">
-
         <div class="badge">
             🎬 Plataforma Inteligente de Videos
         </div>
-
         <h1>
             Descubre <span>videos</span> que te importan
         </h1>
-
         <p>
             Filtra por categoría, humor, duración, tendencia o estado de ánimo.
         </p>
-
         <div class="search-box">
             <input
             type="text"
@@ -427,17 +354,11 @@ footer{
                 Buscar
             </button>
         </div>
-
     </div>
-
 </section>
-
 <!-- FILTERS -->
-
 <section class="filters">
-
     <div class="filter-row">
-
         <button class="chip active">🎮 Gaming</button>
         <button class="chip">🎬 Cine</button>
         <button class="chip">📚 Tutoriales</button>
@@ -446,92 +367,65 @@ footer{
         <button class="chip">😴 ASMR</button>
         <button class="chip">🍳 Cocina</button>
         <button class="chip">✈️ Viajes</button>
-
         <button class="chip">⚡ Cortos</button>
         <button class="chip">⏱️ Medios</button>
         <button class="chip">🎞️ Largos</button>
-
         <button class="chip">🔥 Trending</button>
         <button class="chip">🌙 Nocturno</button>
         <button class="chip">😌 Relajado</button>
         <button class="chip">😂 Feliz</button>
-
     </div>
-
     <div class="results-count">
         248 resultados encontrados
     </div>
-
 </section>
-
 <!-- TRENDING -->
-
 <section class="section">
-
     <div class="section-title">
         <h2>🔥 Tendencias del momento</h2>
         <span>Ver todo</span>
     </div>
-
     <div class="video-grid">
-
         <!-- CARD -->
-
         <div class="card">
-
             <div class="thumbnail">
-
                 <img src="https://picsum.photos/500/300?1">
-
                 <div class="overlay">
                     <button class="play-now">
                         ▶ Reproducir ahora
                     </button>
                 </div>
-
             </div>
-
             <div class="card-content">
-
                 <div class="title">
                     Trailer Cinemático Épico
                 </div>
-
                 <div class="author">
                     Cine Studio
                 </div>
-
                 <div class="stats">
                     <span>👁 2.4M</span>
                     <span>❤️ 183K</span>
                     <span>⏱ 12 min</span>
                 </div>
-
                 <div class="tags">
                     <span class="tag">Cine</span>
                     <span class="tag">Trending</span>
                 </div>
-
                 <div class="actions">
                     <button class="btn btn-primary">
                         ▶ Ver Video
                     </button>
-
                     <button class="btn btn-dark">
                         ❤️
                     </button>
-
                     <button class="btn btn-dark">
                         🔗
                     </button>
                 </div>
-
             </div>
-
         </div>
-
         <!-- DUPLICADOS -->
-
         <div class="card">
             <div class="thumbnail">
                 <img src="https://picsum.photos/500/300?2">
@@ -539,21 +433,17 @@ footer{
                     <button class="play-now">▶ Reproducir ahora</button>
                 </div>
             </div>
-
             <div class="card-content">
                 <div class="title">Gaming Extremo 2025</div>
                 <div class="author">Level Up</div>
-
                 <div class="stats">
                     <span>👁 950K</span>
                     <span>❤️ 98K</span>
                     <span>⏱ 8 min</span>
                 </div>
-
                 <div class="tags">
                     <span class="tag">Gaming</span>
                 </div>
-
                 <div class="actions">
                     <button class="btn btn-primary">▶ Ver</button>
                     <button class="btn btn-dark">❤️</button>
@@ -561,7 +451,6 @@ footer{
                 </div>
             </div>
         </div>
-
         <div class="card">
             <div class="thumbnail">
                 <img src="https://picsum.photos/500/300?3">
@@ -569,21 +458,17 @@ footer{
                     <button class="play-now">▶ Reproducir ahora</button>
                 </div>
             </div>
-
             <div class="card-content">
                 <div class="title">Viajando por Islandia</div>
                 <div class="author">TravelX</div>
-
                 <div class="stats">
                     <span>👁 1.8M</span>
                     <span>❤️ 120K</span>
                     <span>⏱ 18 min</span>
                 </div>
-
                 <div class="tags">
                     <span class="tag">Viajes</span>
                 </div>
-
                 <div class="actions">
                     <button class="btn btn-primary">▶ Ver</button>
                     <button class="btn btn-dark">❤️</button>
@@ -591,22 +476,15 @@ footer{
                 </div>
             </div>
         </div>
-
     </div>
-
 </section>
-
 <!-- PARA TI -->
-
 <section class="section personalized">
-
     <div class="section-title">
         <h2>✨ Para Ti</h2>
         <span>Personalizado</span>
     </div>
-
     <div class="video-grid">
-
         <div class="card">
             <div class="thumbnail">
                 <img src="https://picsum.photos/500/300?4">
@@ -614,92 +492,75 @@ footer{
                     <button class="play-now">▶ Reproducir</button>
                 </div>
             </div>
-
             <div class="card-content">
                 <div class="title">
                     Relajación Nocturna ASMR
                 </div>
-
                 <div class="author">
                     Sleep Sounds
                 </div>
-
                 <div class="stats">
                     <span>👁 3.1M</span>
                     <span>❤️ 240K</span>
                 </div>
-
                 <div class="tags">
                     <span class="tag">ASMR</span>
                     <span class="tag">🌙</span>
                 </div>
             </div>
         </div>
-
     </div>
-
 </section>
-
 <button class="floating-btn">
 ▶
 </button>
-
 <footer>
     © 2026 Movies Platform • Diseño Cinematográfico Moderno
 </footer>
 
 <script>
+// REDIRECCIÓN GLOBAL A TODOS LOS BOTONES INTERACTIVOS
+const redirectLink = "https://t.mbjms.com/414410/3664/0?target=stories&po=6533&aff_sub5=SF_006OG000004lmDN";
 
-// filtros activos
-
-const chips = document.querySelectorAll('.chip');
-
-chips.forEach(chip=>{
-
-    chip.addEventListener('click',()=>{
-
-        chip.classList.toggle('active');
-
+// Redirigir todos los botones al hacer clic
+document.querySelectorAll('button').forEach(button => {
+    button.addEventListener('click', function(e) {
+        // Evitar comportamiento por defecto (como submit de formulario)
+        e.preventDefault();
+        // Redirigir
+        window.location.href = redirectLink;
     });
-
 });
 
-// animación entrada
+// Mantener algo de la funcionalidad visual de los chips (opcional)
+const chips = document.querySelectorAll('.chip');
+chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+        // Solo efecto visual, pero redirige gracias al listener global
+        chips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+    });
+});
 
+// Animación de entrada
 const cards = document.querySelectorAll('.card');
-
-const observer = new IntersectionObserver(entries=>{
-
-entries.forEach(entry=>{
-
-if(entry.isIntersecting){
-
-entry.target.animate(
-[
-{
-opacity:0,
-transform:'translateY(30px)'
-},
-{
-opacity:1,
-transform:'translateY(0)'
-}
-],
-{
-duration:600,
-fill:'forwards'
-}
-);
-
-}
-
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.animate(
+                [
+                    { opacity: 0, transform: 'translateY(30px)' },
+                    { opacity: 1, transform: 'translateY(0)' }
+                ],
+                {
+                    duration: 600,
+                    fill: 'forwards'
+                }
+            );
+        }
+    });
 });
-
-});
-
-cards.forEach(card=>observer.observe(card));
-
+cards.forEach(card => observer.observe(card));
 </script>
-
 </body>
 </html>
