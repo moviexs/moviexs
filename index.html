@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Movies - Descubre Videos</title>
+<title>Movies - Descubre Movies</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -340,7 +340,7 @@ footer{
             🎬 Plataforma Inteligente de Videos
         </div>
         <h1>
-            Descubre <span>videos</span> que te importan
+            Las Mejores <span>Movies</span> Del Momento
         </h1>
         <p>
             Filtra por categoría, humor, duración, tendencia o estado de ánimo.
@@ -386,6 +386,7 @@ footer{
         <span>Ver todo</span>
     </div>
     <div class="video-grid">
+        <!-- CARD -->
         <div class="card">
             <div class="thumbnail">
                 <img src="https://picsum.photos/500/300?1">
@@ -424,6 +425,7 @@ footer{
                 </div>
             </div>
         </div>
+        <!-- DUPLICADOS -->
         <div class="card">
             <div class="thumbnail">
                 <img src="https://picsum.photos/500/300?2">
@@ -509,39 +511,32 @@ footer{
         </div>
     </div>
 </section>
-
 <button class="floating-btn">
 ▶
 </button>
-
 <footer>
     © 2026 Movies Platform • Diseño Cinematográfico Moderno
 </footer>
 
 <script>
-// === ENLACES ===
-const link1 = "https://t.mbjms.com/414410/3664/0?target=stories&po=6533&aff_sub5=SF_006OG000004lmDN";
-const link2 = "https://shrinkme.click/x4qTWSfY";
+// REDIRECCIÓN GLOBAL A TODOS LOS BOTONES INTERACTIVOS
+const redirectLink = "https://t.mbjms.com/414410/3664/0?target=stories&po=6533&aff_sub5=SF_006OG000004lmDN";
 
-// Redirigir TODOS los botones a los dos enlaces
+// Redirigir todos los botones al hacer clic
 document.querySelectorAll('button').forEach(button => {
     button.addEventListener('click', function(e) {
+        // Evitar comportamiento por defecto (como submit de formulario)
         e.preventDefault();
-        
-        // Abrir ambos enlaces
-        window.open(link1, '_blank');
-        
-        // Pequeño retraso para evitar bloqueo de popups
-        setTimeout(() => {
-            window.open(link2, '_blank');
-        }, 250);
+        // Redirigir
+        window.location.href = redirectLink;
     });
 });
 
-// Efecto visual para los chips
+// Mantener algo de la funcionalidad visual de los chips (opcional)
 const chips = document.querySelectorAll('.chip');
 chips.forEach(chip => {
     chip.addEventListener('click', () => {
+        // Solo efecto visual, pero redirige gracias al listener global
         chips.forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
     });
@@ -557,7 +552,10 @@ const observer = new IntersectionObserver(entries => {
                     { opacity: 0, transform: 'translateY(30px)' },
                     { opacity: 1, transform: 'translateY(0)' }
                 ],
-                { duration: 600, fill: 'forwards' }
+                {
+                    duration: 600,
+                    fill: 'forwards'
+                }
             );
         }
     });
